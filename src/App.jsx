@@ -1,4 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
 
 function formatDate(string) {
   let options = { year: 'numeric', month: 'long', day: 'numeric'};
@@ -26,6 +29,39 @@ function genDate(start = new Date()) {
 
 export default function App() {
   const [nextDate, setNextDate] = useState(() => genDate());
+  const [attendees, setAttendees] = useState([]);
+  const [name, setName] = useState("")
+
+  useEffect(() => {
+    getAttendees();
+  }, []);
+
+  async function getAttendees() {
+    const { data, error } = await supabase.from("attendees").select("*");
+
+    if (error) {
+      console.error(error);
+      return;
+    }
+
+    setAttendees(data);
+    console.log(data);
+  }
+
+  async function addAttendee() {
+    console.log("Adding name: " + name)
+    const { data, error } = await supabase.from("attendees").insert([
+      {
+        name: name,
+      }
+    ])
+    if (error) {
+      console.error(error)
+    }
+
+    getAttendees();
+    setName("")
+  }
 
   function clearDate() {
     setNextDate('Cleared!');
@@ -51,6 +87,17 @@ export default function App() {
         <h2>Test button section</h2>
         <button onClick={generateNext}>Generate next date</button>
         <button onClick={clearDate}>Reset date</button>
+        <ul>
+          {attendees.map((attendee) => (
+            <li key={attendee.name}>{attendee.name}</li>
+          ))}
+        </ul>
+        <p>Reserve your spot:</p>
+        <form>
+          <label>Name:</label>
+          <input name="attendeeName" type="text" value={name} onChange={(e)=>setName(e.target.value)}></input>
+          <button type="button" onClick={addAttendee}>Submit</button>
+        </form>
       </section>
       <footer>
         <p>Snacks and drinks available for purchase</p>
