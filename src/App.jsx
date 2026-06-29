@@ -23,7 +23,6 @@ export default function App() {
     }
 
     setAttendees(data);
-    console.log(data);
   }
 
   async function addAttendee() {
