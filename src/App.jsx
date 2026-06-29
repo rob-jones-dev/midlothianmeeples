@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { createClient } from '@supabase/supabase-js';
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
+import Games from './Games.jsx'
 
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
 
@@ -57,6 +58,7 @@ export default function App() {
           <button type="button" onClick={addAttendee}>Submit</button>
         </form>
       </section>
+      <Games />
       <Footer />
     </>
   )
