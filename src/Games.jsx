@@ -118,6 +118,20 @@ export default function Games() {
         setAddGameHostPlaying(true);
     }
 
+    async function deleteGame(id) {
+        const { error } = await supabase
+        .from("games")
+        .delete()
+        .eq("id", id);
+
+        if (error) {
+            console.error(error);
+            return;
+        }
+
+        setGames(prevGames => prevGames.filter(game => game.id !== id));
+    }
+
     return(
         <>
             <article>
@@ -143,6 +157,7 @@ export default function Games() {
                             Reserve spot for this game
                         </button>
                         {reservationError && <p>{reservationError}</p>}
+                        <button type="button" onClick={() => deleteGame(game.id)}>Delete Game</button>
                     </div>
                 )}
             </article>
