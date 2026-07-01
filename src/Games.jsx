@@ -132,37 +132,50 @@ export default function Games() {
         setGames(prevGames => prevGames.filter(game => game.id !== id));
     }
 
+    function toggleAddGameForm() {
+        const form = document.querySelector(".add-game-form-hidden");
+        if (form.classList.contains("add-game-form-hidden")) {
+            form.classList.remove("add-game-form-hidden");
+            form.classList.add("add-game-form");
+        } else {
+            form.classList.remove("add-game-form");
+            form.classList.add("add-game-form-hidden");
+        }
+    }
+
     return(
         <>
             <article>
-                {games.map(game => 
-                    <div>
-                        <h2>{game.name}</h2>
-                        <p><em>{game.min_players} to {game.max_players} players.</em></p>
-                        <p>Current Players:</p>
-                        <ul>
-                            {game.players.map((player, index) => (
-                                <li key={`${player}-${index}`}>{player}</li>
-                            ))}
-                        </ul>
-                        <label htmlFor="gamereserve">Name:</label>
-                        <input
-                            id="gamereserve"
-                            name="gamereserve"
-                            type="text"
-                            value={reservationName}
-                            onChange={(e) => setReservationName(e.target.value)}
-                        />
-                        <button type="button" onClick={() => reserveSpot(game)}>
-                            Reserve spot for this game
-                        </button>
-                        {reservationError && <p>{reservationError}</p>}
-                        <button type="button" onClick={() => deleteGame(game.id)}>Delete Game</button>
-                    </div>
+                <h2>Games:</h2>
+                <div className="game-cards">
+                    {games.map(game => 
+                        <div className="game-card" key={game.id}>
+                            <h3>{game.name}</h3>
+                            <p className="game-players"><em>{game.min_players} to {game.max_players} players.</em></p>
+                            <p>Current Players:</p>
+                            <ul>
+                                {game.players.map((player, index) => (
+                                    <li key={`${player}-${index}`}>{player}</li>
+                                ))}
+                            </ul>
+                            <label htmlFor="gamereserve">Name:</label><br />
+                            <input
+                                id="gamereserve"
+                                name="gamereserve"
+                                type="text"
+                                value={reservationName}
+                                onChange={(e) => setReservationName(e.target.value)}
+                            />
+                            <button type="button" onClick={() => reserveSpot(game)}>
+                                Reserve spot for this game
+                            </button>
+                            {reservationError && <p>{reservationError}</p>}
+                            <button type="button" onClick={() => deleteGame(game.id)}>Delete Game</button>
+                        </div>
                 )}
-            </article>
-            <button>Add New Game</button>
-            <div>
+                </div>
+            <button onClick={toggleAddGameForm}>Add New Game</button>
+            <div className="add-game-form-hidden">
                 <form>
                     <label for="game">Game:</label>
                     <input name="game" type="text" onChange={(e) => setAddGameName(e.target.value)}></input>
@@ -172,12 +185,15 @@ export default function Games() {
                     <input name="minplayers" type="number" value={addGameMinPlayers} onChange={(e) => setAddGameMinPlayers(e.target.value)}></input>
                     <label for="maxplayers">Maximum number of players:</label>
                     <input name="maxplayers" type="number" value={addGameMaxPlayers} onChange={(e) => setAddGameMaxPlayers(e.target.value)}></input>
-                    <label for="hostPlaying">Will the Host be playing the game?</label>
-                    <input name="hostPlaying" defaultChecked type="checkbox" onChange={(e) => setAddGameHostPlaying(e.target.value)}></input>
+                    <div>
+                        <label for="hostPlaying">Will the Host be playing the game?</label>
+                        <input name="hostPlaying" defaultChecked type="checkbox" onChange={(e) => setAddGameHostPlaying(e.target.value)}></input>
+                    </div>
                     <button onClick={addGame} type="button">Submit Game</button>
                     {addGameError && <p>{addGameError}</p>}
                 </form>
             </div>
+            </article>
         </>
     )
 }

@@ -9,7 +9,7 @@ function genDate(start = new Date()) {
   let current = new Date(start);
 
   while(true) {
-    current.setDate(current.getDate() + 1)
+    current.setDate(current.getDate())
 
     if (current.getDay() === 3) {
       const dayOfMonth = current.getDate();
@@ -28,12 +28,22 @@ export default function Header() {
     const [nextDate, setNextDate] = useState(() => genDate());
     return (
         <header>
+          <div className="header-text">
             <h1>Midlothian Meeples</h1>
             <h2>Board game night</h2>
+          </div>
+          <div className="intro-text">
             <p>Love board games? Join us for a community night of gaming, from card games to board games, fun for all!</p>
-            <h3>{nextDate}</h3>
-            <h4>7-11pm</h4>
-            <h5>Free Entry, reserve your spot below!</h5>
-         </header>
+          </div>
+          <div className="date-text">
+            <div className="date-text-left">
+              <h3>{nextDate}</h3>
+              <h4>7-11pm</h4>
+            </div>
+            <div className="date-text-right">
+              <h5>Free Entry, reserve your spot below!</h5>
+            </div>
+          </div>
+        </header>
     )
 }

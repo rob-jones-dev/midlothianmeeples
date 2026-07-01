@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.alfa-slab-one-regular {
+  font-family: "Alfa Slab One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arvo-regular {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.arvo-bold {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.arvo-regular-italic {
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.arvo-bold-italic {
+  font-family: "Arvo", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+body {
+    background: #cfcfcf;
+    display: flex;
+    justify-content: center;
+}
+
+#root {
+    max-width: 1200px;
+}
+
+.header-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid #000;
+}
+
+h1 {
+    font-family: "Alfa Slab One", serif;
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+h2 {
+    font-family: "Alfa Slab One", serif;
+    font-weight: 100;
+    font-size: 2rem;
+}
+
+h3 {
+    font-family: "Alfa Slab One", serif;
+    font-weight: 100;
+    font-size: 1.25rem;
+}
+
+.header-text h2 {
+    font-family: "Arvo", serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: #3bc14a;
+    border-radius: 50%;
+}
+
+.intro-text {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    border-bottom: 5px solid #000;
+}
+
+.date-text {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    font-size: 1.25rem;
+    border-bottom: 5px solid #000;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 100px;
+}
+
+.date-text-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.date-text-left h3, .date-text-left h4 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.date-text-right h5 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    font-family: 'Alfa Slab One', serif;
+    font-weight: 100;
+    font-size: 2rem;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin: 0;
+    border-bottom: 5px solid #000;
+    padding-bottom: 1rem;
+}
+
+section h2 {
+    font-family: "Alfa Slab One", serif;
+    font-weight: 100;
+}
+
+section ul {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 2px;
+    max-height: 300px;
+    width: inherit;
+    margin: 0;
+}
+
+section li {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    font-size: 1rem;
+    list-style-type: none;
+}
+
+.reservation-form {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    width: 45%;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.attendees {
+    display: flex;
+    flex-direction: column;
+    width: 45%
+}
+
+.reservation-form p {
+    font-family: 'Alfa Slab One', serif;
+    font-weight: 100;
+    font-size: 1.5rem;
+}
+
+.reservation-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-form label, .reservation-form input, .reservation-form button {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    font-family: "Arvo", serif;
+    background-color: #3bc14a;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    border: none;
+}
+
+button:hover {
+    background-color: #2e9c3a;
+    cursor: pointer;
+}
+
+.game-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.game-card {
+    background: #4e6e5d;
+    color: #fff;
+    border-radius: 5px;
+    width: 25%;
+    padding: 1rem;
+    font-family: "Arvo", serif;
+}
+
+.game-card h3 {
+    margin: 0;
+    text-align: center;
+}
+
+.game-card p {
+    margin: 0;
+}
+
+.game-card ul {
+    margin: 0;
+}
+
+.game-card .game-players {
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.game-card label, .game-card input, .game-card button {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+article {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 5px solid #000;
+}
+
+.add-game-form-hidden {
+    display: none;
+}
+
+.add-game-form form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 30%;
+    background: #4e6e5d;
+    padding: 1rem;
+    color: #fff;
+    font-family: "Arvo", serif;
+    border-radius: 5px;
+}
+
+footer {
+    font-family: "Arvo", serif;
+    font-weight: 400;
+}
