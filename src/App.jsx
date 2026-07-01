@@ -56,8 +56,8 @@ export default function App() {
         <div className="reservation-form">
         <p>Reserve your spot:</p>
           <form>
-            <label>Name:</label><br />
-            <input name="attendeeName" type="text" value={name} onChange={(e)=>setName(e.target.value)}></input><br />
+            <label>Name:</label>
+            <input name="attendeeName" type="text" value={name} onChange={(e)=>setName(e.target.value)}></input>
             <button type="button" onClick={addAttendee}>Submit</button>
           </form>
         </div>
