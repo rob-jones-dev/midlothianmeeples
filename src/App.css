@@ -1,40 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Rocker&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-.alfa-slab-one-regular {
-  font-family: "Alfa Slab One", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.arvo-regular {
-  font-family: "Arvo", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.arvo-bold {
-  font-family: "Arvo", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.arvo-regular-italic {
-  font-family: "Arvo", serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.arvo-bold-italic {
-  font-family: "Arvo", serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
 body {
-    background: #cfcfcf;
+    background: #530097;
     display: flex;
     justify-content: center;
+    color: #fff;
+    padding: 0;
+    margin: 0;
 }
 
 #root {
@@ -45,79 +18,65 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 5px solid #000;
-}
-
-h1 {
-    font-family: "Alfa Slab One", serif;
-    font-weight: 100;
-    font-size: 4rem;
+    margin: 5rem 0;
 }
 
 h2 {
-    font-family: "Alfa Slab One", serif;
-    font-weight: 100;
-    font-size: 2rem;
+    margin: 0;
+    font-family: "New Rocker", cursive;
+    font-size: 3rem;
 }
 
 h3 {
-    font-family: "Alfa Slab One", serif;
+    font-family: "Arvo", serif;
     font-weight: 100;
     font-size: 1.25rem;
+}
+
+.header-text h1 {
+    font-family: "New Rocker", cursive;
+    font-weight: 100;
+    font-size: 5rem;
+    margin: 0;
+    text-shadow: 0 0.4rem #31005f;
+}
+
+.header-text p {
+    margin-top: 0;
+    font-family: "Arvo", serif;
+    font-weight: 100;
 }
 
 .header-text h2 {
     font-family: "Arvo", serif;
     font-weight: 100;
     font-size: 1.5rem;
-    width: 200px;
-    height: 200px;
     display: flex;
     align-items: center;
-    text-align: center;
-    background: #3bc14a;
-    border-radius: 50%;
-}
-
-.intro-text {
-    font-family: "Arvo", serif;
-    font-weight: 400;
-    font-size: 1.25rem;
-    border-bottom: 5px solid #000;
+    text-align: right;
 }
 
 .date-text {
     font-family: "Arvo", serif;
     font-weight: 400;
     font-size: 1.25rem;
-    border-bottom: 5px solid #000;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    min-height: 100px;
+}
+
+.date-text h3 {
+    background: #fff;
+    color: #530097;
+    padding: 1rem;
+    border-radius: 5px;
 }
 
 .date-text-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.date-text-left h3, .date-text-left h4 {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    height: 100%;
-}
-
-.date-text-right h5 {
-    margin: 0;
-    display: flex;
-    align-items: center;
-    height: 100%;
-    font-family: 'Alfa Slab One', serif;
-    font-weight: 100;
-    font-size: 2rem;
+    width: 100%;
 }
 
 section {
@@ -125,13 +84,13 @@ section {
     justify-content: space-between;
     margin-top: 2rem;
     margin: 0;
-    border-bottom: 5px solid #000;
     padding-bottom: 1rem;
 }
 
 section h2 {
-    font-family: "Alfa Slab One", serif;
+    font-family: "New Rocker", cursive;
     font-weight: 100;
+    font-size: 2rem;
 }
 
 section ul {
@@ -159,7 +118,6 @@ section li {
     height: inherit;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .attendees {
@@ -168,10 +126,11 @@ section li {
     width: 45%
 }
 
-.reservation-form p {
-    font-family: 'Alfa Slab One', serif;
+.reservation-form h3 {
+    font-family: 'New Rocker', cursive;
     font-weight: 100;
     font-size: 1.5rem;
+    margin: 0;
 }
 
 .reservation-form form {
@@ -186,41 +145,71 @@ section li {
     margin-bottom: 1rem;
 }
 
-button {
-    font-family: "Arvo", serif;
-    background-color: #3bc14a;
-    color: #fff;
+.reservation-form input {
+    padding: 0.5rem;
     border-radius: 5px;
-    padding: 0.5rem 1rem;
     border: none;
+    font-family: "Arvo", serif;
+    box-shadow: 0 0.4rem #31005f;
 }
 
-button:hover {
-    background-color: #2e9c3a;
+button {
+    background-color: #9900ff;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    color: #fff;
+    box-shadow: 0 0.4rem #31005f;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-family: "Arvo", serif;
+}
+
+button:active {
+    color: white;
+    box-shadow: 0 0.2rem #31005f;
+    transform: translateY(0.2rem);
+}
+
+button:hover:not(:disabled) {
+    background: #b649ff;
+    color: white;
+    text-shadow: 0 0.1rem #31005f;
+}
+
+button:disabled {
+    cursor: auto;
+    color: grey;
 }
 
 .game-cards {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-top: 2rem;
     margin-bottom: 2rem;
 }
 
 .game-card {
-    background: #4e6e5d;
+    background: #006a4c;
     color: #fff;
     border-radius: 5px;
     width: 25%;
     padding: 1rem;
     font-family: "Arvo", serif;
+    box-shadow: 0 0.4rem #31005f;
+    border: 2px solid #000;
 }
 
 .game-card h3 {
     margin: 0;
     text-align: center;
+}
+
+.game-card .game-card-header {
+    margin-bottom: 1rem;
 }
 
 .game-card p {
@@ -231,7 +220,7 @@ button:hover {
     margin: 0;
 }
 
-.game-card .game-players {
+.game-card .game-players, .game-card .game-host {
     text-align: center;
     font-size: 0.9rem;
 }
@@ -243,10 +232,13 @@ button:hover {
     margin-bottom: 0.5rem;
 }
 
+.add-game-button {
+    width: 100%;
+}
+
 article {
     margin-bottom: 2rem;
     padding-bottom: 1rem;
-    border-bottom: 5px solid #000;
 }
 
 .add-game-form-hidden {
@@ -263,6 +255,26 @@ article {
     color: #fff;
     font-family: "Arvo", serif;
     border-radius: 5px;
+}
+
+.findus {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    font-family: "Arvo", serif;
+}
+
+.findus-wrapper {
+    display: flex;
+    gap: 1rem;
+}
+
+.findus-map {
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-shadow: 0 0.4rem #31005f;
 }
 
 footer {

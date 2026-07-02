@@ -1,4 +1,4 @@
-import { useState, useEffect, use } from 'react';
+import { useState, useEffect } from 'react';
 import { createClient } from '@supabase/supabase-js';
 
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
@@ -96,7 +96,7 @@ export default function Games() {
             playersArray.push(capitalizeFirstLetter(addHostName));
         }
 
-        const { data, error } = await supabase.from("games").insert([
+        const { error } = await supabase.from("games").insert([
             {
                 name: capitalizeFirstLetter(addGameName),
                 host: capitalizeFirstLetter(addHostName),
@@ -150,8 +150,11 @@ export default function Games() {
                 <div className="game-cards">
                     {games.map(game => 
                         <div className="game-card" key={game.id}>
-                            <h3>{game.name}</h3>
-                            <p className="game-players"><em>{game.min_players} to {game.max_players} players.</em></p>
+                            <div className="game-card-header">
+                                <h3>{game.name}</h3>
+                                <p className="game-players"><em>{game.min_players} to {game.max_players} players.</em></p>
+                                <p className="game-host"><em>Hosted by {game.host}</em></p>
+                            </div>
                             <p>Current Players:</p>
                             <ul>
                                 {game.players.map((player, index) => (
@@ -174,7 +177,7 @@ export default function Games() {
                         </div>
                 )}
                 </div>
-            <button onClick={toggleAddGameForm}>Add New Game</button>
+            <button className="add-game-button" onClick={toggleAddGameForm}>Add New Game</button>
             <div className="add-game-form-hidden">
                 <form>
                     <label for="game">Game:</label>

@@ -3,6 +3,7 @@ import { createClient } from '@supabase/supabase-js';
 import Header from './Header.jsx'
 import Footer from './Footer.jsx'
 import Games from './Games.jsx'
+import Findus from './Findus.jsx'
 import './App.css'
 
 const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY);
@@ -44,6 +45,14 @@ export default function App() {
     <>
       <Header />
       <section>
+        <div className="reservation-form">
+          <h2>Reserve your spot:</h2>
+          <form>
+            <label>Name:</label>
+            <input name="attendeeName" type="text" value={name} onChange={(e)=>setName(e.target.value)}></input>
+            <button type="button" onClick={addAttendee}>Submit</button>
+          </form>
+        </div>
         <div className="attendees">
           <h2 className="main-header">Current Attendees:</h2>
           <ul>
@@ -53,16 +62,9 @@ export default function App() {
 
           </ul>
         </div>
-        <div className="reservation-form">
-        <p>Reserve your spot:</p>
-          <form>
-            <label>Name:</label>
-            <input name="attendeeName" type="text" value={name} onChange={(e)=>setName(e.target.value)}></input>
-            <button type="button" onClick={addAttendee}>Submit</button>
-          </form>
-        </div>
       </section>
       <Games />
+      <Findus />
       <Footer />
     </>
   )

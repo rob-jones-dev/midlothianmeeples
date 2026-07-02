@@ -29,19 +29,16 @@ export default function Header() {
     return (
         <header>
           <div className="header-text">
-            <h1>Midlothian Meeples</h1>
-            <h2>Board game night</h2>
-          </div>
-          <div className="intro-text">
-            <p>Love board games? Join us for a community night of gaming, from card games to board games, fun for all!</p>
+            <div>
+              <h1>Midlothian Meeples</h1>
+              <p><em>Board Game Night</em></p>
+            </div>
+            
+            <h2>The Glencourse Centre<br /> Auchendinny</h2>
           </div>
           <div className="date-text">
             <div className="date-text-left">
-              <h3>{nextDate}</h3>
-              <h4>7-11pm</h4>
-            </div>
-            <div className="date-text-right">
-              <h5>Free Entry, reserve your spot below!</h5>
+              <h3><em>First and Third Wednesday of each month. Next meeting: {nextDate}, 7-11pm</em></h3>
             </div>
           </div>
         </header>

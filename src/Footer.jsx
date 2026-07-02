@@ -1,8 +1,7 @@
 export default function Footer() {
     return (
         <footer>
-            <p>Snacks and drinks available for purchase</p>
-            <p><b>Located at</b> /// Glencourse community centre, Auchendinny</p>
+            <p>Copyright &copy; 2024 Midlothian Meeples</p>
         </footer>   
     )
 }
