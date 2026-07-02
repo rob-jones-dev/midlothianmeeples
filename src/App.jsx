@@ -11,6 +11,7 @@ const supabase = createClient(import.meta.env.VITE_SUPABASE_URL, import.meta.env
 export default function App() {
   const [attendees, setAttendees] = useState([]);
   const [name, setName] = useState("")
+  const [reserveError, setReserveError] = useState("")
 
   useEffect(() => {
     getAttendees();
@@ -28,6 +29,11 @@ export default function App() {
   }
 
   async function addAttendee() {
+    if (!name.trim()) {
+      setReserveError("Please enter your name.");
+      return;
+    }
+
     const { error } = await supabase.from("attendees").insert([
       {
         name: name,
@@ -52,6 +58,7 @@ export default function App() {
             <input name="attendeeName" type="text" value={name} onChange={(e)=>setName(e.target.value)}></input>
             <button type="button" onClick={addAttendee}>Submit</button>
           </form>
+          {reserveError && <p className="error">{reserveError}</p>}
         </div>
         <div className="attendees">
           <h2 className="main-header">Current Attendees:</h2>
