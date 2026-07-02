@@ -27,7 +27,7 @@ export default function App() {
   }
 
   async function addAttendee() {
-    const { data, error } = await supabase.from("attendees").insert([
+    const { error } = await supabase.from("attendees").insert([
       {
         name: name,
       }

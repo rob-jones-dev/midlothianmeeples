@@ -9,7 +9,7 @@ function genDate(start = new Date()) {
   let current = new Date(start);
 
   while(true) {
-    current.setDate(current.getDate())
+    current.setDate(current.getDate() + 1);
 
     if (current.getDay() === 3) {
       const dayOfMonth = current.getDate();
@@ -25,7 +25,7 @@ function genDate(start = new Date()) {
 }
 
 export default function Header() {
-    const [nextDate, setNextDate] = useState(() => genDate());
+    const [nextDate] = useState(() => genDate());
     return (
         <header>
           <div className="header-text">
