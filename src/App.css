@@ -201,6 +201,11 @@ button:disabled {
     font-family: "Arvo", serif;
     box-shadow: 0 0.4rem #31005f;
     border: 2px solid #000;
+    transition: all 0.2s ease-in-out;
+}
+
+.game-card:hover {
+    background: #008060;
 }
 
 .game-card h3 {
