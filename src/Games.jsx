@@ -13,6 +13,7 @@ export default function Games() {
     let [addGameMaxPlayers, setAddGameMaxPlayers] = useState(1);
     let [addGameError, setAddGameError] = useState("");
     let [addGameHostPlaying, setAddGameHostPlaying] = useState(true);
+    let [addGameLink, setAddGameLink] = useState("");
 
     function capitalizeFirstLetter(val) {
         return String(val).charAt(0).toUpperCase() + String(val).slice(1);
@@ -112,6 +113,7 @@ export default function Games() {
         setAddGameError("");
         getGames();
         setAddGameName("");
+        setAddGameLink("");
         setAddHostName("");
         setAddGameMinPlayers(0);
         setAddGameMaxPlayers(0);
@@ -151,9 +153,13 @@ export default function Games() {
                     {games.map(game => 
                         <div className="game-card" key={game.id}>
                             <div className="game-card-header">
-                                <h3>{game.name}</h3>
-                                <p className="game-players"><em>{game.min_players} to {game.max_players} players.</em></p>
-                                <p className="game-host"><em>Hosted by {game.host}</em></p>
+                                <a href={game.link} target="_blank" rel="noopener noreferrer">
+                                    <h3>{game.name}</h3>
+                                    <p className="game-players"><em>{game.min_players} to {game.max_players} players.</em></p>
+                                    {game.host && (
+                                        <p className="game-host"><em>Hosted by {game.host}</em></p>
+                                    )}
+                                </a>
                             </div>
                             <p>Current Players:</p>
                             <ul>
@@ -182,6 +188,8 @@ export default function Games() {
                 <form>
                     <label for="game">Game:</label>
                     <input name="game" type="text" onChange={(e) => setAddGameName(e.target.value)}></input>
+                    <label for="link">Link to Game info (optional but highly recommended):</label>
+                    <input name="link" type="text" onChange={(e) => setAddGameLink(e.target.value)}></input>
                     <label for="host">Host:</label>
                     <input name="host" type="text" onChange={(e) => setAddHostName(e.target.value)}></input>
                     <label for="minplayers">Minimum number of players:</label>
