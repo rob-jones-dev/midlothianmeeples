@@ -21,6 +21,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 .header-text {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin: 5rem 0;
@@ -110,7 +111,6 @@ section ul {
     flex-wrap: wrap;
     gap: 2px;
     max-height: 300px;
-    width: inherit;
     margin: 0;
 }
 
@@ -124,7 +124,6 @@ section li {
 .reservation-form {
     font-family: "Arvo", serif;
     font-weight: 400;
-    width: 45%;
     height: inherit;
     display: flex;
     flex-direction: column;
@@ -155,7 +154,7 @@ section li {
     margin-bottom: 1rem;
 }
 
-.reservation-form input {
+input {
     padding: 0.5rem;
     border-radius: 5px;
     border: none;
@@ -206,12 +205,17 @@ button:disabled {
     background: #006a4c;
     color: #fff;
     border-radius: 5px;
-    width: 25%;
     padding: 1rem;
     font-family: "Arvo", serif;
     box-shadow: 0 0.4rem #31005f;
     border: 2px solid #000;
     transition: all 0.2s ease-in-out;
+    max-width: 300px;
+}
+
+.game-card a {
+    color: #fff;
+    text-decoration: none;
 }
 
 .game-card:hover {
@@ -269,16 +273,35 @@ article {
     display: none;
 }
 
+.add-game-form {
+    display: flex;
+    justify-content: center;
+}
+
 .add-game-form form {
     display: flex;
     flex-direction: column;
+    gap: 10px;
     margin-top: 1rem;
-    width: 30%;
-    background: #4e6e5d;
+    min-width: 325px;
+    width: 45%;
+    background: #006a4c;
     padding: 1rem;
     color: #fff;
     font-family: "Arvo", serif;
     border-radius: 5px;
+}
+
+.add-game-form input, .add-game-form button {
+    box-shadow: 0 0.4rem #00270f;
+}
+
+.add-game-form button {
+    background: #00431a;
+}
+
+.add-game-form button:hover {
+    background: #007252;
 }
 
 .findus {
@@ -293,6 +316,7 @@ article {
 .findus-wrapper {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .findus-map {
@@ -304,4 +328,26 @@ article {
 footer {
     font-family: "Arvo", serif;
     font-weight: 400;
+}
+
+@media screen and (max-width: 800px) {
+    .header-text {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-text h1, .header-text h2, .header-text p {
+        text-align: center;
+    }
+
+    section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .findus-left {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 }
