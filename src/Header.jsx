@@ -34,7 +34,9 @@ export default function Header() {
               <p><em>Board Game Night</em></p>
             </div>
             
-            <h2>The Glencourse Centre<br /> Auchendinny</h2>
+            <a href="https://glencorsecentre.org.uk" target="_blank" rel="noopener noreferrer">
+              <h2>The Glencourse Centre<br /> Auchendinny</h2>
+            </a>
           </div>
           <div className="date-text">
             <div className="date-text-left">
