@@ -336,6 +336,12 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
+
+    #root {
+        padding: 0 1rem;
+        overflow-x: hidden;
+    }
+
     .header-text {
         flex-direction: column;
         align-items: center;
