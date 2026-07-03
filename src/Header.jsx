@@ -40,7 +40,7 @@ export default function Header() {
           </div>
           <div className="date-text">
             <div className="date-text-left">
-              <h3><em>First and Third Wednesday of each month. Next meeting: {nextDate}, 7-11pm</em></h3>
+              <h3><em>First and Third Wednesday of each month. Next session: {nextDate}, 7-11pm</em></h3>
             </div>
           </div>
         </header>
