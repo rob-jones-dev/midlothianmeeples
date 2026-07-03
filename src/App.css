@@ -19,14 +19,6 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
     border-right: 2px dotted #90f;
 }
 
-.header-text {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    margin: 5rem 0;
-}
-
 h2 {
     margin: 0;
     font-family: "New Rocker", cursive;
@@ -37,6 +29,15 @@ h3 {
     font-family: "Arvo", serif;
     font-weight: 100;
     font-size: 1.25rem;
+}
+
+.header-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    margin: 5rem 0;
 }
 
 .header-text h1 {
@@ -96,6 +97,7 @@ section {
     margin-top: 2rem;
     margin: 0;
     padding-bottom: 1rem;
+    gap: 40px;
 }
 
 section h2 {
@@ -121,6 +123,10 @@ section li {
     list-style-type: none;
 }
 
+.attendees, .reservation-form {
+    width: 100%;
+}
+
 .reservation-form {
     font-family: "Arvo", serif;
     font-weight: 400;
@@ -132,7 +138,6 @@ section li {
 .attendees {
     display: flex;
     flex-direction: column;
-    width: 45%
 }
 
 .reservation-form h3 {
