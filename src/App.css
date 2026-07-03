@@ -237,6 +237,15 @@ button:disabled {
     margin-bottom: 0.5rem;
 }
 
+.game-card button {
+    background: #00431a;
+    box-shadow: 0 0.4rem #00270f;
+}
+
+.game-card button:hover {
+    background: #007252;
+}
+
 .add-game-button {
     width: 100%;
 }
