@@ -120,21 +120,7 @@ export default function Games() {
         setAddGameMaxPlayers(0);
         setAddGameHostPlaying(true);
     }
-
-    async function deleteGame(id) {
-        const { error } = await supabase
-        .from("games")
-        .delete()
-        .eq("id", id);
-
-        if (error) {
-            console.error(error);
-            return;
-        }
-
-        setGames(prevGames => prevGames.filter(game => game.id !== id));
-    }
-
+    
     function toggleAddGameForm() {
         const form = document.querySelector(".add-game-form-hidden");
         if (form.classList.contains("add-game-form-hidden")) {
@@ -180,7 +166,6 @@ export default function Games() {
                                 Reserve spot for this game
                             </button>
                             {reservationError && <p>{reservationError}</p>}
-                            <button type="button" onClick={() => deleteGame(game.id)}>Delete Game</button>
                         </div>
                 )}
                 </div>
