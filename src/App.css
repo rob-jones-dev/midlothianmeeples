@@ -335,6 +335,57 @@ footer {
     font-weight: 400;
 }
 
+.hidden {
+    display: none!important;
+}
+
+.editing .edit-input {
+    display: inline-block;
+}
+
+.editing .confirm-button {
+    display: inline-block;
+}
+
+.admin-panel {
+    font-family: 'Arvo', serif;
+}
+
+.edit-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.edit-panel input{
+    width: fit-content;
+}
+
+.people-panel li {
+    margin-bottom: 10px;
+}
+
+.people-panel li span {
+    margin-right: 5px;
+}
+
+.people-panel li button {
+    margin-right: 5px;
+}
+
+.games-panel li {
+    margin-bottom: 10px;
+}
+
+.player-panel {
+    display: flex;
+    gap: 5px;
+}
+
+.confirm-button {
+    margin-left: 10px;
+}
+
 @media screen and (max-width: 800px) {
 
     #root {
