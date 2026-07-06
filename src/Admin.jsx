@@ -123,6 +123,23 @@ export default function Admin() {
         }
     }
 
+    async function clearAll() {
+        const { error: attendeesError } = await supabase
+            .from("attendees")
+            .delete()
+            .neq("id", 0);
+        
+        const { error: gamesError } = await supabase
+            .from("games")
+            .delete()
+            .neq("id", 0);
+        
+        if (!attendeesError && !gamesError) {
+            setAttendees([]);
+            setGames([]);
+        }
+    }
+
     function revealConfirm() {
         let button = document.querySelector('.confirm-button');
         button.classList.toggle("hidden");
@@ -138,7 +155,7 @@ export default function Admin() {
             <div className="admin-panel">
                 <h1>Admin Panel</h1>
                 <button onClick={revealConfirm}>Clear Games and Attendees for Next Week</button>
-                <button className="hidden confirm-button">Confirm (This cannot be undone!)</button>
+                <button onClick={clearAll} className="hidden confirm-button">Confirm (This cannot be undone!)</button>
                 <h3>Attendees</h3>
                 <ul className="people-panel">
                     {attendees.map((attendee) => (
