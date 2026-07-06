@@ -29,6 +29,11 @@ export default function Reserve() {
         return;
     }
 
+    if (attendees.length >= 25) {
+        setReserveError("Sorry, we're full!");
+        return;
+    }
+
     const { error } = await supabase.from("attendees").insert([
         {
         name: name,
