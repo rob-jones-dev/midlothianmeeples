@@ -230,10 +230,6 @@ button:disabled {
     text-decoration: none;
 }
 
-.game-card:hover {
-    background: #008060;
-}
-
 .game-card h3 {
     margin: 0;
     text-align: center;
@@ -275,6 +271,40 @@ button:disabled {
 .add-game-button {
     width: 100%;
 }
+
+.game-link {
+    background: #00431a;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+    transition: all 0.1s ease-in-out;
+}
+
+.game-link {
+    background-color: #00431a;
+    border: none;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 1rem;
+    color: #fff;
+    box-shadow: 0 0.4rem #00270f;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    font-family: "Arvo", serif;
+}
+
+.game-link:active {
+    color: white;
+    box-shadow: 0 0.2rem #00270f;
+    transform: translateY(0.2rem);
+}
+
+.game-link:hover:not(:disabled) {
+    background: #007252;
+    color: white;
+    text-shadow: 0 0.1rem #31005f;
+}
+
 
 article {
     margin-bottom: 2rem;

@@ -104,6 +104,7 @@ export default function Games() {
                 max_players: addGameMaxPlayers,
                 min_players: addGameMinPlayers,
                 players: playersArray,
+                link: addGameLink,
             }
         ])
         if (error) {
@@ -153,7 +154,7 @@ export default function Games() {
                     {games.map(game => 
                         <div className="game-card" key={game.id}>
                             <div className="game-card-header">
-                                <a href={game.link} target="_blank" rel="noopener noreferrer">
+                                <a className={(game.link ? "game-link" : "")} href={game.link} target="_blank" rel="noopener noreferrer">
                                     <h3>{game.name}</h3>
                                     <p className="game-players"><em>{game.min_players} to {game.max_players} players.</em></p>
                                     {game.host && (
