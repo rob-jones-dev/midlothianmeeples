@@ -220,7 +220,7 @@ export default function Admin() {
                                             id={`editPlayer-${player}`}
                                             type="text"
                                             value={player}
-                                            onChange={(e) => setEditingPlayerName(e.target.value)}
+                                            onChange={(e) => setEditingPlayers(e.target.value)}
                                         />
                                     ))}
                                 </div>
