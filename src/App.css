@@ -91,6 +91,13 @@ h3 {
     width: 100%;
 }
 
+.blurb {
+    font-family: 'Arvo', serif;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
 section {
     display: flex;
     justify-content: space-between;
