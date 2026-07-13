@@ -225,6 +225,7 @@ export default function Admin() {
                                     ))}
                                 </div>
                                 <button onClick={() => confirmGameEdit(game.id)}>Confirm Changes</button>
+                                <button onClick={() => deleteGame(game.id)}>Delete Game</button>
                             </div>
                         </li>
                     ))}
