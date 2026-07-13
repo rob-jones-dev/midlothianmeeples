@@ -1,16 +1,7 @@
-# React + Vite
+# Midlothian Meeples
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hey there! You've found your way to the GitHub for the website for the Midlothian Meeples webpage. If you're looking for the website you can find it at midlothianmeeples.games
 
-Currently, two official plugins are available:
+This website was made entirely by me! It remains in a constant state of improvement as our users add requests for new features and give bug reports which I attempt to squash.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Because of the open nature of this application it is very suseptible to scope-creep, as a result I am constantly talking with the users and discussing what features we should add and what features should be refined. For example anyone can access the site and reserve a spot, I could add a layer of security to ensure that we don't get spammed by bots filling out forms, but because our users want a very small and easy website to use we have chosen to not enforce user validation until we need to. Similarly we could add a login system where users can manage their own games this would add the ability for users to correct any mistakes they've made and prevent the aforementioned bot problem, but neither of these are an issue right now and our users really value the ability to log in on any device and sign themselves up, and any others. This website is designed as a complement to the group chat, not a replacement. That being said new features are being discussed and added all the time.
